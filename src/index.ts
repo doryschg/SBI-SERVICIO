@@ -9,7 +9,7 @@ const PORT = 8080;
 const app = express();
 app.use(bodyParser.json());
 
-app.get('/api/identidades', identidadController);
+app.get('/api/identidades', identidadController.buscarIdentidad);
 
 app.listen(PORT, () => {
   console.log(`server started at http://localhost:${PORT}`);

@@ -1,4 +1,6 @@
 export default interface Identidad {
-  idNum:number;
-  name: string;
+  idNum?:number;
+  nombres?: string;
+  fecha: Date;
+  cantIntentos?:number;
 }
