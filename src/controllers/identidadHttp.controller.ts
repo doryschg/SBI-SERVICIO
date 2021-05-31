@@ -5,8 +5,14 @@ import { Response, Request } from 'express';
 class IdentidadController{
 
 async buscarIdentidad(request: Request, response: Response) {
-  const { body } = request;
-  const { cantMaxima } = body;
+  const { body, query } = request;
+  console.log(query)
+  console.log(body)
+  let cantMaxima
+  // eslint-disable-next-line prefer-const
+  if(request.query && request.query.cantMaxima){
+    cantMaxima=(request.query as any).cantMaxima;
+  }
 
   const identidad = await buscarIdentidad(cantMaxima);
 

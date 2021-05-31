@@ -12,9 +12,9 @@ const getByIdIdentidad = (
 ) => async (cantMaxima:number): Promise<Identidad|null>  => {
 		
 			try {
-        let identidad:Identidad|null=null;
+        const identidad:Identidad|null=null;
         for (let index = 1; index <=cantMaxima; index++) {
-          let numeroGenerado:number= Math.round(Math.random() * (1000 - 1) + 1);
+          const numeroGenerado:number= Math.round(Math.random() * (1000 - 1) + 1);
           const respuesta:Identidad|null=await identidadRepository.findById(numeroGenerado);
         if(respuesta){ 
          return identidad;

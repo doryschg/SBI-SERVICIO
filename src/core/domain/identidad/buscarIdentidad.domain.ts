@@ -12,7 +12,7 @@ const buscarIdentidad = (
 ) => async (cantMaxima:number): Promise<Identidad|null>  => {
   let identidad:Identidad|null=null;
   for (let index = 1; index <=cantMaxima; index++) {
-    let numeroGenerado:number= Math.round(Math.random() * (1000 - 1) + 1);
+    const numeroGenerado:number= Math.round(Math.random() * (1000 - 1) + 1);
     console.log(numeroGenerado);
     const respuesta:RespuestaIdentidad|null=await identidadRepository.getIdentidad(numeroGenerado);
     console.log(respuesta?.consultar_identidad['?column?']);
