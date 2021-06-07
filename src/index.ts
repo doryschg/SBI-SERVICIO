@@ -1,12 +1,10 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
-
-
-//import dotEnv from 'dotenv';
+import dotEnv from 'dotenv';
 import identidadController from './controllers/identidadHttp.controller';
 
-//dotEnv.config();
+dotEnv.config();
 const PORT = 8080;
 
 const app = express();
