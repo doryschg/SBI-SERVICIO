@@ -1,13 +1,13 @@
-/* import { DataTypes, Model } from 'sequelize';
-//import db from '../../database/database'
+import { DataTypes, Model } from 'sequelize';
+import db from '../../database/database'
 interface IdentidadI {
 	idNum: number;
 	nombres: string;
 }
 
-export class Identidad extends Model<IdentidadI> {}
+export class IdentidadModel extends Model<IdentidadI> {}
 
-Identidad.init(
+IdentidadModel.init(
 	{
 		idNum: {
 			type: DataTypes.NUMBER,
@@ -23,4 +23,4 @@ Identidad.init(
 		sequelize: db,
 		tableName: 'identidad',
 	}
-); */
+); 

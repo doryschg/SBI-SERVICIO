@@ -1,10 +1,8 @@
-import RespuestaIdentidad from "../domain/identidad/RespuestaIdentidad";
-import Identidad from "../models/Identidad";
+import { IdentidadModel } from "../models/identidad.models";
 
 interface IdentidadRepository {
-  getIdentidad(idNum: number): Promise<RespuestaIdentidad|null>;
+  getIdentidad(idNum: number): Promise<IdentidadModel|null>;
 
-  findById(idNum: number): Promise<Identidad|null>;
 
 }
 export default IdentidadRepository;
