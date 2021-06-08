@@ -20,6 +20,7 @@ IdentidadModel.init(
 		},
 	},
 	{
+		timestamps: false,
 		sequelize: db,
 		tableName: 'identidad',
 	}

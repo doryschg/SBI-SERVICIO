@@ -1,11 +1,13 @@
+import identidad from '.';
 import { IdentidadModel } from '../../models/identidad.models';
 import IdentidadRepository from '../../repositories/identidad.repository';
 
 const buscarIdentidad = (
   identidadRepository: IdentidadRepository,
-) => async (cantMaxima:number): Promise<IdentidadModel|null>  => {
+) => async (cantMaxima:any): Promise<IdentidadModel|null>  => {
+  const identidad:IdentidadModel|null= await identidadRepository.buscarIdentidad(cantMaxima);
 
-  return null;
+  return identidad;
 };
 
 export default buscarIdentidad;
