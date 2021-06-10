@@ -8,12 +8,12 @@ async buscarIdentidad(request: Request, response: Response) {
   const cantMaxima: number = query.cantMaxima as any;
 
   const identidad = await buscarIdentidad(cantMaxima);
-  if(identidad){
+    if(identidad){
     response.json({identidad, mensaje:'Resultado encontrado'})
-  }
-  else{
+    }
+    else{
     response.json({identidad, mensaje:'Resultado no encontrado'})
-  }
-};
+    }
+  };
 }
 export default new IdentidadController;
