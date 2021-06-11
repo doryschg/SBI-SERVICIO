@@ -1,8 +1,10 @@
 import buscarIdentidad from './buscarIdentidad.domain';
-import IdentidadPsql from '../../../dataSources/IdentidadPsql.dataSources';
+import IdentidadPsql from '../../../dataSources/identidadPsql.dataSources';
+import MinioServer from '../../../dataSources/minio.dataSources';
 
 const identidadRepository = new IdentidadPsql();
-export default buscarIdentidad(identidadRepository);
+const recursoRepository= new MinioServer();
+export default buscarIdentidad(identidadRepository, recursoRepository);
 
 
 

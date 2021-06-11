@@ -1,15 +1,18 @@
-import IdentidadPsql from '../../../dataSources/IdentidadPsql.dataSources';
-import { IdentidadModel } from '../../models/identidad.models';
+import { IdentidadI, IdentidadModel } from '../../models/identidad.models';
 import IdentidadRepository from '../../repositories/identidad.repository';
+import RecursoRepository from '../../repositories/recurso.repository';
 
 const buscarIdentidad = (
-  identidadRepository: IdentidadRepository,
-) => async (cantMaxima:number): Promise<IdentidadModel|null>  => {
+  identidadRepository: IdentidadRepository, recursoRepository:RecursoRepository
+) => async (cantMaxima:number): Promise<IdentidadI|null>  => {
   
     for (let index = 1; index <=cantMaxima; index++){
       const numeroGenerado:number= Math.round(Math.random() * (1000 - 1) + 1);
-      const identidad:IdentidadModel|null= await identidadRepository.buscarIdentidad(numeroGenerado);
+      const identidad = await identidadRepository.buscarIdentidad(numeroGenerado);
       if(identidad){
+        if(identidad.url){
+          identidad.url = await recursoRepository.obtenerRecurso(identidad.url!);
+        }
         return identidad;
       }
     }

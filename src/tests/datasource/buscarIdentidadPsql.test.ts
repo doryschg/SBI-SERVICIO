@@ -1,6 +1,5 @@
 import { expect } from 'chai';
-import { IdentidadModel } from '../../core/models/identidad.models';
-import IdentidadPsql from '../../dataSources/IdentidadPsql.dataSources';
+import IdentidadPsql from '../../dataSources/identidadPsql.dataSources';
 
 describe('buscar identidad DataSource tests', () => { // the tests container
     it('checking default options', () => { 

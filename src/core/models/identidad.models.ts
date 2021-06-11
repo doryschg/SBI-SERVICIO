@@ -1,9 +1,9 @@
 import { DataTypes, Model } from 'sequelize';
 import db from '../../database/database'
-interface IdentidadI {
+export interface IdentidadI {
 	idNum: number;
 	nombres: string;
-	url:String;
+	url:string|null;
 }
 
 export class IdentidadModel extends Model<IdentidadI> {}

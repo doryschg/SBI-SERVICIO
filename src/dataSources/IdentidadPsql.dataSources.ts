@@ -1,15 +1,15 @@
-import { IdentidadModel } from '../core/models/identidad.models';
+import { IdentidadI, IdentidadModel } from '../core/models/identidad.models';
 import IdentidadRepository from '../core/repositories/identidad.repository';
 class IdentidadPsql implements IdentidadRepository {
 
-  public async buscarIdentidad(idNum: number): Promise<IdentidadModel|null> {
+  public async buscarIdentidad(idNum: number): Promise<IdentidadI|null> {
     try {
-      const identidad:IdentidadModel|null = await IdentidadModel.findByPk(idNum);
+      const identidad = await IdentidadModel.findByPk(idNum);
       if(identidad){
-        return identidad;
+        return identidad.get();
       }
       else{
-        return new IdentidadModel();
+        return null;
       }
     } catch (error) {
       return null;
