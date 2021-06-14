@@ -13,7 +13,6 @@ const buscarIdentidad = (
       if(consultaIdentidad){
         { const url = await recursoRepository.obtenerRecurso(consultaIdentidad.url!);
           if(url){
-            console.log(url);
             consultaIdentidad.url=url;
             const respuestaIdentidad: RepuestaIdentidad ={
               identidad:consultaIdentidad,

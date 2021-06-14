@@ -2,10 +2,16 @@ import { expect } from 'chai';
 import IdentidadPsql from '../../dataSources/identidadPsql.dataSources';
 
 describe('buscar identidad DataSource tests', () => { // the tests container
-    it('checking default options', () => { 
-        const numeroGenerado:number= Math.round(Math.random() * (1000 - 1) + 1);
+    it('checking default options', (ok) => { 
         const identidad= new IdentidadPsql();
         const resultadoBusqueda= identidad.buscarIdentidad(4);
+        resultadoBusqueda.then((ident) => {
+          console.log(ident);
+          ok();
+        }).catch((e) => {
+          console.log(e)
+          ok();
+        });
         //expect(resultadoBusqueda?.).to.false;
        // expect(resultadoBusqueda).to.be.true;
        /* expect(resultadoBusqueda.detectRetina).to.be.false; // Do I need to explain anything? It's like writing in English!

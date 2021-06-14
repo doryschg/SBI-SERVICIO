@@ -9,10 +9,10 @@ async buscarIdentidad(request: Request, response: Response) {
 
   const identidad = await buscarIdentidad(cantMaxima);
     if(identidad){
-    response.json(identidad)
+    response.json(identidad);
     }
     else{
-    response.json({identidad, mensaje:'Ocurrio un error'})
+    response.status(500).send('Ocurrio un error');
     }
   };
 }

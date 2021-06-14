@@ -12,6 +12,5 @@ describe('minio DataSource tests', () => { // the tests container
           console.log(e)
           ok();
         });
-        
     });
 });
