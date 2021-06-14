@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import MinioServer from '../../dataSources/minio.dataSources';
+import MinioServer from '../../dataSources/minioServer.dataSources';
 
 describe('minio DataSource tests', () => { // the tests container
     it('checking default options', (ok) => {

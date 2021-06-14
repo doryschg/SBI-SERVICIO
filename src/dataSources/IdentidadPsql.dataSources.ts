@@ -8,12 +8,11 @@ class IdentidadPsql implements IdentidadRepository {
       if(identidad){
         return identidad.get();
       }
-      else{
-        return null;
-      }
     } catch (error) {
+      console.log(error);
       return null;
     }
+    return null;
   }
 }
 export default IdentidadPsql;
