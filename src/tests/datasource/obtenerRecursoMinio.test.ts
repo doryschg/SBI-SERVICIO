@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import MinioServer from '../../dataSources/minioServer.dataSources';
 
 describe('minio DataSource tests', () => { // the tests container
-    it('checking default options', (ok) => {
+    it('devuelve la ruta de un video', (ok) => {
         const minio= new MinioServer();
         const resultadoBusqueda= minio.obtenerRecurso('LP/LA_PAZ/video.mp4');
         resultadoBusqueda.then((url) => {

@@ -1,5 +1,5 @@
 import { IdentidadI, IdentidadModel } from '../../models/identidad.models';
-import RepuestaIdentidad from '../../models/respuestaIdentidad';
+import RepuestaIdentidad from '../../../dto/respuestaIdentidad';
 import IdentidadRepository from '../../repositories/identidad.repository';
 import RecursoRepository from '../../repositories/recurso.repository';
 
@@ -12,6 +12,7 @@ const buscarIdentidad = (
       const consultaIdentidad = await identidadRepository.buscarIdentidad(numeroGenerado);
       if(consultaIdentidad){
         { const url = await recursoRepository.obtenerRecurso(consultaIdentidad.url!);
+          // TODO implementar logger para log
           if(url){
             consultaIdentidad.url=url;
             const respuestaIdentidad: RepuestaIdentidad ={
