@@ -1,15 +1,20 @@
-import { IdentidadI, IdentidadModel } from '../core/models/identidad.models';
+import { Identidad, IdentidadAttributes, IdentidadCreationAttributes } from '../core/models/identidad.models';
 import IdentidadRepository from '../core/repositories/identidad.repository';
 class IdentidadPsql implements IdentidadRepository {
+  crearIdentidad(identidad:IdentidadCreationAttributes): Promise<IdentidadAttributes> {
+    throw new Error('Method not implemented.');
+  }
 
-   public async listarIdentidades(): Promise<IdentidadModel[]> {
-    const identidades=await IdentidadModel.findAll();
+   public async listarIdentidades(): Promise<IdentidadAttributes[]> {
+    const identidades=await Identidad.findAll({
+      attributes:['idNum','nombres']
+    });
     return identidades;
   }
   
-  public async buscarIdentidad(idNum: number): Promise<IdentidadI|null> {
+  public async buscarIdentidad(idNum: number): Promise<IdentidadAttributes|null> {
     try {
-      const identidad = await IdentidadModel.findByPk(idNum);
+      const identidad = await Identidad.findByPk(idNum);
       if(identidad){
         return identidad.get();
       }

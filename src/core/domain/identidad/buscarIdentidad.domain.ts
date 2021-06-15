@@ -1,4 +1,3 @@
-import { IdentidadI, IdentidadModel } from '../../models/identidad.models';
 import RepuestaIdentidad from '../../../dto/respuestaIdentidad';
 import IdentidadRepository from '../../repositories/identidad.repository';
 import RecursoRepository from '../../repositories/recurso.repository';

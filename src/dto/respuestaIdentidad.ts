@@ -1,9 +1,8 @@
-import IdentidadPsql from "../../dataSources/identidadPsql.dataSources";
-import { IdentidadI } from "./identidad.models";
+import { IdentidadAttributes } from "../core/models/identidad.models";
 import MensajesApp from "./mensajeApp";
 
 interface RepuestaIdentidad extends MensajesApp {
-	identidad?:IdentidadI|null;
+	identidad?:IdentidadAttributes|null;
 	cantidadIntentos?:number;
 	fecha:Date;
 }
