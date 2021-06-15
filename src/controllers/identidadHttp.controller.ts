@@ -1,4 +1,4 @@
-import buscarIdentidad from '../core/domain/identidad';
+import buscarIdentidad from '../core/domain/buscar-identidad';
 import { Response, Request } from 'express';
 
 class IdentidadController{

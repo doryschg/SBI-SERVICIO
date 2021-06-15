@@ -1,6 +1,6 @@
-import RepuestaIdentidad from '../../../dto/respuestaIdentidad';
 import IdentidadRepository from '../../repositories/identidad.repository';
 import RecursoRepository from '../../repositories/recurso.repository';
+import RepuestaIdentidad from './respuestaIdentidad';
 
 const buscarIdentidad = (
   identidadRepository: IdentidadRepository, recursoRepository:RecursoRepository

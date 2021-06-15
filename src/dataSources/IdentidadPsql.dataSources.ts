@@ -1,16 +1,7 @@
-import { Identidad, IdentidadAttributes, IdentidadCreationAttributes } from '../core/models/identidad.models';
+import { Identidad, IdentidadAttributes, IdentidadCreationAttributes } from '../core/models/identidad/identidad.models';
 import IdentidadRepository from '../core/repositories/identidad.repository';
-class IdentidadPsql implements IdentidadRepository {
-  crearIdentidad(identidad:IdentidadCreationAttributes): Promise<IdentidadAttributes> {
-    throw new Error('Method not implemented.');
-  }
-
-   public async listarIdentidades(): Promise<IdentidadAttributes[]> {
-    const identidades=await Identidad.findAll({
-      attributes:['idNum','nombres']
-    });
-    return identidades;
-  }
+import { PsqlRepository } from '../lib/PsqlRepository';
+class IdentidadPsql extends PsqlRepository<Identidad>  implements IdentidadRepository {
   
   public async buscarIdentidad(idNum: number): Promise<IdentidadAttributes|null> {
     try {

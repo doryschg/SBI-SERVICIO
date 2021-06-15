@@ -1,8 +1,7 @@
-import { IdentidadAttributes, IdentidadCreationAttributes } from "../models/identidad.models";
+import CommonRepository from "../../lib/CommonRepository";
+import { Identidad, IdentidadAttributes, IdentidadCreationAttributes } from "../models/identidad/identidad.models";
 
-interface IdentidadRepository {
+interface IdentidadRepository extends CommonRepository<number, Identidad> {
   buscarIdentidad(idNum: number): Promise<IdentidadAttributes|null>;
-  listarIdentidades(): Promise<IdentidadAttributes[]>;
-  crearIdentidad(identidad:IdentidadCreationAttributes): Promise<IdentidadAttributes>;
 }
 export default IdentidadRepository;

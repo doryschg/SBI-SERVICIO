@@ -1,4 +1,4 @@
-import { IdentidadAttributes } from "../core/models/identidad.models";
+import { IdentidadAttributes } from "../../models/identidad/identidad.models";
 import MensajesApp from "./mensajeApp";
 
 interface RepuestaIdentidad extends MensajesApp {

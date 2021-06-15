@@ -6,7 +6,7 @@ HasManyCountAssociationsMixin,
 HasManyCreateAssociationMixin,
 Optional
  } from 'sequelize';
-import db from '../../database/database'
+import db from '../../../database/database'
 
 export interface IdentidadAttributes {
 	idNum: number;

@@ -1,4 +1,4 @@
-import buscarIdentidad from '../../core/domain/identidad/buscarIdentidad.domain';
+import buscarIdentidad from '../../core/domain/buscar-identidad/buscarIdentidad.domain';
 import { expect } from 'chai';
 import IdentidadPsql from '../../dataSources/identidadPsql.dataSources';
 import MinioServer from '../../dataSources/minioServer.dataSources';
