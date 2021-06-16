@@ -36,7 +36,7 @@ export class InMemoryRepository implements CommonRepository<string, any>{
     return Promise.resolve(this.repo);
   }
 
-  async delete(id: string): Promise<Boolean> {
+  async delete(id: string): Promise<boolean> {
     let index = -1;
     const { length } = this.repo;
     

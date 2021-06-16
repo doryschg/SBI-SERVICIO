@@ -1,6 +1,6 @@
 import IdentidadRepository from '../../repositories/identidad.repository';
 import RecursoRepository from '../../repositories/recurso.repository';
-import RepuestaIdentidad from './respuestaIdentidad';
+import RepuestaIdentidad from '../respuestaIdentidad';
 
 const buscarIdentidad = (
   identidadRepository: IdentidadRepository, recursoRepository:RecursoRepository
@@ -10,6 +10,7 @@ const buscarIdentidad = (
       const numeroGenerado:number= Math.round(Math.random() * (1000 - 1) + 1);
       const consultaIdentidad = await identidadRepository.buscarIdentidad(numeroGenerado);
       if(consultaIdentidad){
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         { const url = await recursoRepository.obtenerRecurso(consultaIdentidad.url!);
           // TODO implementar logger para log
           if(url){

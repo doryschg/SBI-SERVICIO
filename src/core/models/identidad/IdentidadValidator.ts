@@ -1,16 +1,17 @@
 import { ValidationError } from './../../../shared-domain/ValidationError';
 import { DomainModelValidator } from './../../../shared-domain/DomainModelValidator';
 import { Identidad } from './identidad.models';
+import { IdentidadDto } from './IdentidadDto';
 
 export class IdentidadValidator implements DomainModelValidator<Identidad> {
 
   private errors: Array<ValidationError> = [];
 
   // validar
-  public validate(identidad: Identidad): boolean {
-    if (identidad) {
+  public validate(identidad: IdentidadDto): boolean {
+    if (!identidad) {
       this.errors.push({
-        field: 'retroId',
+        field: 'nombres',
         message: 'Unknown identidad'
       });
     }

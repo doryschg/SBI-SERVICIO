@@ -1,13 +1,14 @@
 import { Identidad, IdentidadCreationAttributes } from '../../models/identidad/identidad.models';
 import { IdentidadFactory } from '../../models/identidad/IdentidadFactory';
 import IdentidadRepository from '../../repositories/identidad.repository';
-import RepuestaIdentidad from '../buscar-identidad/respuestaIdentidad';
+import RepuestaIdentidad from '../respuestaIdentidad';
 
 const crearIdentidad = (
   identidadRepository: IdentidadRepository
 ) => async (identidad:Identidad): Promise<RepuestaIdentidad|null>  => {
   try {
-    const identidadToAdd = IdentidadFactory.create(identidad);
+      const identidadToAdd = IdentidadFactory.create(identidad);
+      console.log(identidad);
       const crearIdentidad = await identidadRepository.add(identidadToAdd);
       if(crearIdentidad){
             const respuestaIdentidad: RepuestaIdentidad ={

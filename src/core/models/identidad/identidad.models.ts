@@ -14,7 +14,7 @@ export interface IdentidadAttributes {
 	url:string|null;
 }
 // Some attributes are optional in `User.build` and `User.create` calls
-export interface IdentidadCreationAttributes extends Optional<IdentidadAttributes, "idNum"> {}
+export type IdentidadCreationAttributes = Optional<IdentidadAttributes, "url">
 
 export class Identidad extends Model<IdentidadAttributes, IdentidadCreationAttributes>
   implements IdentidadAttributes {
